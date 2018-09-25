@@ -32,7 +32,8 @@ defmodule MyScenicApp.Component.Nav do
         <styles=#{styles} font_size=#{20}>
           <rect fill=#{{48, 48, 48}}>#{{width, @height}}</rect>
           <text translate=#{{14, 35}} align=#{:right}>Scene:</text>
-          <dropdown id=#{:nav} translate=#{{70, 15}}>#{
+          <dropdown id=#{:nav} translate=#{{70, 15}}>
+          #{
             {[
               {"Sensor", MyScenicApp.Scene.Sensor},
               {"Primitives", MyScenicApp.Scene.Primitives},
