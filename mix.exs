@@ -28,12 +28,12 @@ defmodule MyScenicApp.MixProject do
       {:elixir_make, "~> 0.4"},
 
       # deps to use AFTER it is released publicly
-      {:scenic, "~> 0.7.0"},
-      {:scenic_driver_glfw, "~> 0.7.0"},
+      {:scenic, "~> 0.8"},
+      {:scenic_driver_glfw, "~> 0.8"},
 
       # These deps are optional and are included as they are often used.
       # If your app doesn't need them, they are safe to remove.
-      {:scenic_sensor, "~> 0.7.0"},
+      {:scenic_sensor, "~> 0.7"},
       {:scenic_clock, ">= 0.0.0"},
       {:scenic_jsx, github: "olafura/scenic_jsx"},
 
