@@ -43,12 +43,17 @@ defmodule MyScenicApp.Scene.Components do
              </button>
            </>
            <slider id=#{:num_slider} t=#{{0, 95}}>#{{{0, 100}, 0}}</slider>
-           <text_field width=#{240} hint="Type here" translate=#{{200, 160}}>A</text_field>
+           <radio_group id=#{:radio_group} t=#{{0, 140}}>
+            #{
+              [{"Radio A", :radio_a}, {"Radio B", :radio_b, true}, {"Radio C", :radio_c, false}]
+            }
+           </radio_group>
+           <text_field width=#{240} hint="Type here" translate=#{{200, 160}}/>
            <checkbox id=#{:check_box} t=#{{200, 140}}>#{{"Check Box", true}}</checkbox>
-           <text_field id=#{:text} width=#{240} hint="Type here" translate=#{{200, 160}}>A</text_field>
-           <text_field id=#{:password} width=#{240} hint="Password" translate=#{{200, 200}}>A</text_field>
-           <text_field id=#{:text} width=#{240} translate=#{{200, 160}}>A</text_field>
-           <text_field id=#{:password} width=#{240} translate=#{{200, 200}}>A</text_field>
+           <text_field id=#{:text} width=#{240} hint="Type here" translate=#{{200, 160}}/>
+           <text_field id=#{:password} width=#{240} hint="Password" translate=#{{200, 200}}/>
+           <text_field id=#{:text} width=#{240} translate=#{{200, 160}}/>
+           <text_field id=#{:password} width=#{240} translate=#{{200, 200}}/>
            <dropdown id=#{:dropdown} translate=#{{0, 202}}>
             #{
               {
@@ -63,12 +68,6 @@ defmodule MyScenicApp.Scene.Components do
        <Notes>#{@notes}</Notes>
      </>
   )debug
-  # <radio_group id=#{:radio_group} t=#{{0, 140}}>
-  #   #{
-  #      [{"Radio A", :radio_a}, {"Radio B", :radio_b, true}, {"Radio C", :radio_c, false}]
-  #      # [{"Radio A", :radio_a}]
-  #    }
-  # </radio_group>
 
   @event_str "Event received: "
 

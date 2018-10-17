@@ -12,7 +12,7 @@
   "scenic": {:hex, :scenic, "0.8.0", "44bffa479383e1be5986a891c2597ef48ea47485d901c82f8c6bbb74770dcb9e", [:make, :mix], [{:elixir_make, "~> 0.4", [hex: :elixir_make, repo: "hexpm", optional: false]}], "hexpm"},
   "scenic_clock": {:hex, :scenic_clock, "0.8.0", "fc1444307062411a3c741c505ae349f2dfd7f5cb71787dfc2fc1b4298daee042", [:mix], [{:scenic, "~> 0.8", [hex: :scenic, repo: "hexpm", optional: false]}, {:timex, "~> 3.3", [hex: :timex, repo: "hexpm", optional: false]}], "hexpm"},
   "scenic_driver_glfw": {:hex, :scenic_driver_glfw, "0.8.0", "710e02564f7d7ecb590cbed15521a90535f17cfbf9fe225c01237667e90f64e3", [:make, :mix], [{:elixir_make, "~> 0.4", [hex: :elixir_make, repo: "hexpm", optional: false]}, {:scenic, "~> 0.8", [hex: :scenic, repo: "hexpm", optional: false]}], "hexpm"},
-  "scenic_jsx": {:git, "https://github.com/olafura/scenic_jsx.git", "663a6786b1bcf1b15fb7000034d327c34dcdccf2", []},
+  "scenic_jsx": {:git, "https://github.com/olafura/scenic_jsx.git", "58ad74b25f449f0b79ca7308c8aba5048addff3e", []},
   "scenic_math": {:hex, :scenic_math, "0.7.1", "131ef7cf693293845efbbca911cea170060c9f0d6a677df5a439d5ca191d9e8e", [:make, :mix], [{:elixir_make, "~> 0.4", [hex: :elixir_make, repo: "hexpm", optional: false]}], "hexpm"},
   "scenic_sensor": {:hex, :scenic_sensor, "0.7.0", "a12aed7596fbab025a535f912325da5a087ff704e96f7acb274c3034d832f9ce", [:mix], [], "hexpm"},
   "ssl_verify_fun": {:hex, :ssl_verify_fun, "1.1.4", "f0eafff810d2041e93f915ef59899c923f4568f4585904d010387ed74988e77b", [:make, :mix, :rebar3], [], "hexpm"},
