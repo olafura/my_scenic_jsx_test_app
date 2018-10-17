@@ -12,6 +12,9 @@ defmodule MyScenicApp.Scene.Splash do
   alias Scenic.ViewPort
   import Scenic.Primitives, only: [{:rect, 3}, {:update_opts, 2}]
 
+  require ScenicJsx
+  import ScenicJsx
+
   @parrot_hash "UfHCVlANI2cFbwSpJey64FxjT-0"
   @parrot_path :code.priv_dir(:my_scenic_app)
                |> Path.join("/static/images/scenic_parrot.png")
@@ -19,12 +22,11 @@ defmodule MyScenicApp.Scene.Splash do
   @parrot_width 62
   @parrot_height 114
 
-  @graph Graph.build()
-         |> rect(
-           {@parrot_width, @parrot_height},
-           id: :parrot,
-           fill: {:image, {@parrot_hash, 0}}
-         )
+  @graph ~z(
+    <>
+      <rect id=#{:parrot} fill=#{{:image, {@parrot_hash, 0}}}>#{{@parrot_width, @parrot_height}}</rect>
+    </>
+  )
 
   @animate_ms 30
   @finish_delay_ms 1000
