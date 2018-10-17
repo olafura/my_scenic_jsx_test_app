@@ -8,6 +8,9 @@ defmodule MyScenicApp.Scene.Sensor do
   import Scenic.Primitives
   import Scenic.Components
 
+  require ScenicJsx
+  import ScenicJsx
+
   alias MyScenicApp.Component.Nav
   alias MyScenicApp.Component.Notes
 
@@ -33,48 +36,24 @@ defmodule MyScenicApp.Scene.Sensor do
     col = vp_width / 6
 
     # build the graph
-    graph =
-      Graph.build(font: :roboto, font_size: 16, theme: :dark)
-      # text input
-      |> group(
-        fn graph ->
-          graph
-          |> text(
-            "",
-            id: :temperature,
-            text_align: :center,
-            font_size: @font_size,
-            translate: {vp_width / 2, @font_size}
-          )
-          |> group(
-            fn g ->
-              g
-              |> button("Calibrate", width: col * 4, height: 46, theme: :primary)
-              |> button(
-                "Maintenance",
-                width: col * 2 - 6,
-                height: 46,
-                theme: :secondary,
-                translate: {0, 60}
-              )
-              |> button(
-                "Settings",
-                width: col * 2 - 6,
-                height: 46,
-                theme: :secondary,
-                translate: {col * 2 + 6, 60}
-              )
-            end,
-            translate: {col, @font_size + 60},
-            button_font_size: 24
-          )
-        end,
-        translate: {0, @body_offset}
+    graph = ~z(
+        <font=#{:roboto} font_size=#{16} theme=#{:dark}>
+          <translate=#{{0, @body_offset}}>
+            <text id=#{:temperature} text_align=#{:center} font_size=#{@font_size} translate=#{{vp_width / 2, @font_size}}/>
+            <translate=#{{col, @font_size + 60}} button_font_size=#{24}>
+              <button width=#{col * 4} height=#{46} theme=#{:primary}>"Calibrate"</button>
+              <button width=#{col * 2 - 6} height=#{46} theme=#{:secondary} translate=#{{0, 60}}>
+                Maintenance
+              </button>
+              <button width=#{col * 2 - 6} height=#{46} theme=#{:secondary} translate=#{{col * 2 + 6, 60}}>
+                Settings
+              </button>
+            </>
+          </>
+          <Nav>#{__MODULE__}</Nav>
+          <Notes>#{@notes}</Notes>
+        </>
       )
-      # NavDrop and Notes are added last so that they draw on top
-      |> Nav.add_to_graph(__MODULE__)
-      |> Notes.add_to_graph(@notes)
-      |> IO.inspect()
       |> push_graph()
 
     # subscribe to the simulated temperature sensor
