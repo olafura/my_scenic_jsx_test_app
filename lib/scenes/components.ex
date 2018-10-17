@@ -67,7 +67,7 @@ defmodule MyScenicApp.Scene.Components do
        <Nav>#{__MODULE__}</Nav>
        <Notes>#{@notes}</Notes>
      </>
-  )debug
+  )
 
   @event_str "Event received: "
 
